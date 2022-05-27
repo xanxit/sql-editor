@@ -14,12 +14,12 @@ const MainComponent = () => {
   const getData = async (fetchUrl) => {
     const res = await axios.get(fetchUrl);
     const data = await res?.data;
-    const rawResults = parseCSV(data);
+    const rawResults = parseCSV(atob(data.content));
     setHeader(rawResults);
   };
   useEffect(() => {
     if (openTab.tab !== "none") {
-      const fetchUrl = `/data/${openTab?.tab}.csv`;
+      const fetchUrl = `https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/${openTab?.tab}.csv?ref=master`;
       getData(fetchUrl);
     }
   }, [openTab]);
