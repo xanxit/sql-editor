@@ -51,10 +51,10 @@ const Editor = ({ openTab, setOpenTab, resetQuery }) => {
           <BsFillTrashFill />
           &nbsp; Reset Query
         </div>
-        <div className="text-white cursor-pointer flex justify-center items-center bg-blue-700 hover:bg-blue-800 font-medium mx-4 text-sm px-4 py-2">
+        {/* <div className="text-white cursor-pointer flex justify-center items-center bg-blue-700 hover:bg-blue-800 font-medium mx-4 text-sm px-4 py-2">
           <BsSaveFill />
           &nbsp; Save Query
-        </div>
+        </div> */}
       </div>
     </>
   );
