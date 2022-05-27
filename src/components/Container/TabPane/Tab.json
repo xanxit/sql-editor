@@ -1,0 +1,30 @@
+[
+    {
+        "name":"categories",
+        "id":1
+    },
+    {
+        "name":"customers",
+        "id":2
+    },
+    {
+        "name":"employee_territories",
+        "id":3
+    },
+    {
+        "name":"employees",
+        "id":4
+    },
+    {
+        "name":"order_details",
+        "id":5
+    },
+    {
+        "name":"orders",
+        "id":6
+    },
+    {
+        "name":"products",
+        "id":7
+    }
+]
