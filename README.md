@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# SQL QUERY EDITOR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This [SQL Query Editor](https://sql-editor-task.vercel.app/). was made by using React JS, Tailwind CSS and React-table.
+I have created this SQL Query Editor for the front-end internship opportunity at Atlan. It's sole purpose is to run query over certain random data set taken from [here](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv).I have built a tab switching query editor where one could even write queries and as well as switch between tabs of the tables  to get the data and one could even save the queries which they want to use in the future.
 
-## Available Scripts
+## FEATURES
 
-In the project directory, you can run:
+-> I have created a tab based table switching, so whenever one switch between the tables the query editor gets updated and then we could see the data of the table.
 
-### `npm start`
+-> I have used react-table which stores memoized data, which helped in the re-rendering of data and hence enhanced the overall performance of the task.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-> I have added pagination and and even considered the possibility for managing the data in the chunks of 10,25 and 50 units on the page(making myself considerate enough to get the Brownie points).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-> I have also added a save query button which will apparently create an array in the local storage for the retrieval of all the saved queries every time when a person opens the web app.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Performance Metrics and Enhancements
 
-### `npm run build`
+### The first contentful paint time according to LightHouse(Chrome Dev Tools) is 0.3 sec.
+I have ran checks through LightHouse(Chrome Dev Tools) on my website over the desktop mode.
+![rating report](https://github.com/xanxit/sql-editor/blob/readme/sql-rating.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### The fully load time according to GTmetrix is 563ms.
+Apart from Chrome Dev Tools I have even evaluated my website's performance
+![rating-report](https://github.com/xanxit/sql-editor/blob/readme/gt-metrix.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### The fully load time according to Tools.PingDom is 1.15sec.
+Apart from Chrome Dev Tools I have even evaluated my website's performance
+![rating-report](https://github.com/xanxit/sql-editor/blob/readme/toolpingdom.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+-> I have used React Memo for caching the API calls, it makes my app more snappier as the re-rendering gets faster.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-> I have divided my project into various components inside the components folder, I have structured this way for the ease of people to understand the division of code with easily understandable name of the sub folders.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-> I have kept the number of state changes as low as possible. While this has been accompanied by a slight reduction in the feature set, it has more than made up for it in the load time of a re-render.
