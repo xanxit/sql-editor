@@ -1,11 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import DataTable from "./DataTable";
 
-const Table = (props) => {
-  const { header } = props;
-  const [loading, setLoading] = useState(true);
+const Table = ({ header, loading, setLoading }) => {
   const data = useMemo(() => header, [header]);
-  useEffect(() => setLoading(false), [header]);
   const columns = useMemo(() => {
     if (header?.length === 0) {
       return [];
@@ -19,9 +16,17 @@ const Table = (props) => {
   return (
     <div>
       {loading ? (
-        <div>Loading...</div>
+        <div className="flex flex-col items-center justify-center space-x-2">
+          <div
+            className="spinner-border border-gray-500 animate-spin inline-block w-20 h-20 border-4 rounded-full"
+            role="status"
+          ></div>
+          <div className="visually-hidden">Loading...</div>
+        </div>
       ) : (
-        <DataTable columns={columns} data={data} />
+        <>
+          <DataTable columns={columns} data={data} />
+        </>
       )}
     </div>
   );

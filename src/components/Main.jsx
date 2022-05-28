@@ -1,8 +1,9 @@
-import React, { useState, useEffect,useMemo } from "react";
+import React, { useState, useEffect} from "react";
 import { parseCSV } from "../utils";
 import Container from "./Container";
 import Table from "./Container/Table";
 import Header from "./Header";
+// import SavedQueryModal from "./SavedQueryModal";
 import axios from "axios";
 
 const MainComponent = () => {
@@ -11,11 +12,15 @@ const MainComponent = () => {
     tab: "none",
     index: 0,
   });
+  const [loading,setLoading] = useState(false);
+  // const [showModal,setShowModal] = useState(false);
   const getData = async (fetchUrl) => {
     const res = await axios.get(fetchUrl);
     const data = await res?.data;
     const rawResults = parseCSV(atob(data.content));
     setHeader(rawResults);
+    setLoading(false);
+    // setShowModal(true)
   };
   useEffect(() => {
     if (openTab.tab !== "none") {
@@ -39,8 +44,8 @@ const MainComponent = () => {
   return (
     <div>
       <Header />
-      <Container openTab={openTab} setOpenTab={setOpenTab} resetQuery={resetQuery} />
-      <Table header={header} />
+      <Container openTab={openTab} setOpenTab={setOpenTab} resetQuery={resetQuery} loading={loading} setLoading={setLoading} />
+      <Table header={header} loading={loading} setLoading={setLoading} />
     </div>
   );
 };

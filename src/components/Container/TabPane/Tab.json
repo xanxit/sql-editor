@@ -26,5 +26,21 @@
     {
         "name":"products",
         "id":7
+    },
+    {
+        "name":"regions",
+        "id":8
+    },
+    {
+        "name":"shippers",
+        "id":9
+    },
+    {
+        "name":"suppliers",
+        "id":10
+    },
+    {
+        "name":"territories",
+        "id":11
     }
 ]
