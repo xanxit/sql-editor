@@ -36,3 +36,5 @@ Apart from Chrome Dev Tools I have even evaluated my website's performance
 -> I have divided my project into various components inside the components folder, I have structured this way for the ease of people to understand the division of code with easily understandable name of the sub folders.
 
 -> I have kept the number of state changes as low as possible. While this has been accompanied by a slight reduction in the feature set, it has more than made up for it in the load time of a re-render.
+
+# PS: xanxit and xanxit10 both are me !
