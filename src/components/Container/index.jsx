@@ -29,11 +29,7 @@ const Container = ({
             <>
               <h1 className="m-4 md:text-3xl text-xl font-bold flex items-center justify-center text-blue-700">
                 Saved Queries&nbsp;
-                <span className="text-lg">
-                  (You need to save queries first)
-                </span>
               </h1>
-
               <SavedQuery savedQuery={savedQuery} setQuery={setQuery} />
             </>
           ) : null}
