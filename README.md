@@ -1,7 +1,7 @@
 # SQL QUERY EDITOR
 
-This [SQL Query Editor](https://sql-editor-task.vercel.app/). was made by using React JS, Tailwind CSS and React-table.
-I have created this SQL Query Editor for the front-end internship opportunity at Atlan. It's sole purpose is to run query over certain random data set taken from [here](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv).I have built a tab switching query editor where one could even write queries and as well as switch between tabs of the tables  to get the data and one could even save the queries which they want to use in the future.
+This [SQL Query Editor](https://sql-editor-task.vercel.app/). was made by using [React JS](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/), [React-table](https://react-table.tanstack.com/) and [React Toastify](https://github.com/fkhadra/react-toastify#readme).
+I have created this SQL Query Editor for the front-end internship opportunity at Atlan. It's sole purpose is to run query over certain random data set taken from [here](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv). I have built a tab switching query editor where one could even write queries and as well as switch between tabs of the tables  to get the data and one could even save the queries which they want to use in the future.
 
 ## FEATURES
 
@@ -12,6 +12,8 @@ I have created this SQL Query Editor for the front-end internship opportunity at
 -> I have added pagination and and even considered the possibility for managing the data in the chunks of 10,25 and 50 units on the page(making myself considerate enough to get the Brownie points).
 
 -> I have also added a save query button which will apparently create an array in the local storage for the retrieval of all the saved queries every time when a person opens the web app.
+
+-> I have even used React Toastify for any error or the successful execution of the queries.
 
 
 ## Performance Metrics and Enhancements
