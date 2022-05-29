@@ -22,7 +22,7 @@ const Editor = ({
   }, [savedQuery]);
   return (
     <>
-      <div className="relative md:mx-60 md:mt-20 md:mb-8">
+      <div className="relative md:mx-60 md:mt-12 md:mb-8">
         <textarea
           type="search"
           rows="7"
@@ -40,7 +40,7 @@ const Editor = ({
           required
         />
       </div>
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center mt-4 mb-2">
         <div
           className="text-white cursor-pointer flex justify-center items-center bg-blue-700 hover:bg-blue-800 font-medium mx-4 text-sm px-4 py-2"
           disabled={query === ""}
