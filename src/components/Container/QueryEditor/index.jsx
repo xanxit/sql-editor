@@ -32,7 +32,7 @@ const Editor = ({
               ? "block p-4 resize-none w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500"
               : "block p-4 resize-none w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-red-600"
           }
-          placeholder="Write an SQL Query!"
+          placeholder="Write an SQL Query!(PS: The queries in the editor are not subjected to give the appropriate results in the table.)"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
