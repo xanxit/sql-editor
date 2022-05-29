@@ -24,7 +24,7 @@ I have ran checks through LightHouse(Chrome Dev Tools) on my website over the de
 Apart from Chrome Dev Tools I have even evaluated my website's performance
 ![rating-report](https://github.com/xanxit/sql-editor/blob/readme/gt-metrix.png)
 
-### The fully load time according to Tools.PingDom is 1.15sec.
+### The fully load time according to Tools.PingDom is 963ms.
 Apart from Chrome Dev Tools I have even evaluated my website's performance
 ![rating-report](https://github.com/xanxit/sql-editor/blob/readme/toolpingdom.png)
 
