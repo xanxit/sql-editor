@@ -7,7 +7,6 @@ const Container = ({
   openTab,
   setOpenTab,
   resetQuery,
-  loading,
   setLoading,
 }) => {
   var storedNames = JSON.parse(
@@ -17,7 +16,6 @@ const Container = ({
   );
   const [savedQuery, setSavedQuery] = useState(storedNames);
   const [query, setQuery] = useState("");
-  console.log(query);
   return (
     <>
       <div className={savedQuery.length>0?"md:grid md:grid-cols-2 md:gap-4 flex flex-wrap":"md:mx-20"}>

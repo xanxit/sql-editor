@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import DataTable from "./DataTable";
 
-const Table = ({ header, loading, setLoading }) => {
+const Table = ({ header, loading }) => {
   const data = useMemo(() => header, [header]);
   const columns = useMemo(() => {
     if (header?.length === 0) {

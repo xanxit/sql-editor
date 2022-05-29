@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { parseCSV } from "../utils";
 import Container from "./Container";
 import Table from "./Container/Table";
@@ -20,7 +20,6 @@ const MainComponent = () => {
   };
   const getData = async (fetchUrl) => {
     const res = await axios.get(fetchUrl);
-    console.log(res);
     if (res.status !== 200) {
       setLoading(false);
       notify(1);

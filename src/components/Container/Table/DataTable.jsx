@@ -7,7 +7,6 @@ const DataTable = ({ columns, data }) => {
       columns: columns,
       data: data,
     },
-    // useGlobalFilter,
     useSortBy,
     usePagination
   );
