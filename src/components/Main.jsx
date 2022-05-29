@@ -1,9 +1,10 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect,useMemo } from "react";
 import { parseCSV } from "../utils";
 import Container from "./Container";
 import Table from "./Container/Table";
 import Header from "./Header";
-// import SavedQueryModal from "./SavedQueryModal";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 const MainComponent = () => {
@@ -12,15 +13,24 @@ const MainComponent = () => {
     tab: "none",
     index: 0,
   });
-  const [loading,setLoading] = useState(false);
-  // const [showModal,setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const notify = (t) => {
+    t === 1 ? toast("No Data found.") : toast(`Query executed successfully`);
+  };
   const getData = async (fetchUrl) => {
     const res = await axios.get(fetchUrl);
+    console.log(res);
+    if (res.status !== 200) {
+      setLoading(false);
+      notify(1);
+      return;
+    }
     const data = await res?.data;
     const rawResults = parseCSV(atob(data.content));
     setHeader(rawResults);
     setLoading(false);
-    // setShowModal(true)
+    notify(2);
   };
   useEffect(() => {
     if (openTab.tab !== "none") {
@@ -28,23 +38,25 @@ const MainComponent = () => {
       getData(fetchUrl);
     }
   }, [openTab]);
-  const resetQuery=()=>{
+  const resetQuery = () => {
     setOpenTab({
       tab: "none",
       index: 0,
     });
     setHeader([]);
-  }
-  // useMemo(() => {
-  //   if (openTab.tab !== "none") {
-  //     const fetchUrl = `/data/${openTab?.tab}.csv`;
-  //     getData(fetchUrl);
-  //   }
-  // }, [openTab]);
+  };
+
   return (
     <div>
       <Header />
-      <Container openTab={openTab} setOpenTab={setOpenTab} resetQuery={resetQuery} loading={loading} setLoading={setLoading} />
+      <Container
+        openTab={openTab}
+        setOpenTab={setOpenTab}
+        resetQuery={resetQuery}
+        loading={loading}
+        setLoading={setLoading}
+      />
+      <ToastContainer />
       <Table header={header} loading={loading} setLoading={setLoading} />
     </div>
   );
